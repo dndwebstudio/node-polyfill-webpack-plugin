@@ -15,7 +15,7 @@ module.exports = class NodePolyfillPlugin {
 	apply(compiler) {
 		compiler.options.plugins.push(new ProvidePlugin(excludeObjectKeys({
 			Buffer: [require.resolve("buffer/"), "Buffer"],
-			console: require.resolve("console-browserify"),
+			//console: require.resolve("console-browserify"),
 			process: require.resolve("process/browser")
 		}, this.options.excludeAliases)))
 
@@ -23,7 +23,7 @@ module.exports = class NodePolyfillPlugin {
 			...excludeObjectKeys({
 				assert: require.resolve("assert/"),
 				buffer: require.resolve("buffer/"),
-				console: require.resolve("console-browserify"),
+				//console: require.resolve("console-browserify"),
 				constants: require.resolve("constants-browserify"),
 				crypto: require.resolve("crypto-browserify"),
 				domain: require.resolve("domain-browser"),
